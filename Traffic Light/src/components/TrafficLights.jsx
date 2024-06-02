@@ -30,13 +30,18 @@ const TrafficLight = () => {
   }, [active]);
 
   return (
+    
     <div className="wrapper">
+      <h1>Traffic Lights</h1>
       <div
         className="light green"
         style={active !== LIGHTS.green ? { opacity: 0.5 } : null}
       >
         A
       </div>
+      {/* <div className="go-proceed">
+        <h1>Go or Proceed</h1>
+      </div> */}
       <div
         className="light yellow"
         style={active !== LIGHTS.yellow ? { opacity: 0.5 } : null}
@@ -49,6 +54,7 @@ const TrafficLight = () => {
       >
         C
       </div>
+      
     </div>
   );
 };

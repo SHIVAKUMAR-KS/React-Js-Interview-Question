@@ -14,12 +14,20 @@
   padding: 10px;
   border-radius: 5px;
 }
+h1 {
+  color: #000;
+}
 
 .green {
   color: #000;
   font-weight: bold;
   background-color: green;
 }
+
+/* .go-proceed {
+  
+  text-align: left;
+} */
 .red {
   color: #000;
   font-weight: bold;
