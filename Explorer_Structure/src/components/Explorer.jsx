@@ -2,7 +2,7 @@ import React from 'react'
 
 const Explorer = () => {
   return (
-    <div className='app'>
+    <div className='app-code'>
       Explorer code app
     </div>
   )
