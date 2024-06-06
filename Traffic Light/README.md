@@ -29,39 +29,67 @@ This project implements a simple traffic light component using React. The traffi
 ### TrafficLight Component
 
 ```jsx
-import React, { useState, useEffect } from 'react';
-import './TrafficLight.css';
+
+import React, { useState, useEffect } from "react";
+
+const LIGHTS = {
+  red: "red",
+  green: "green",
+  yellow: "yellow",
+};
 
 const TrafficLight = () => {
-  const [activeLight, setActiveLight] = useState('red');
+  const [active, setActive] = useState(LIGHTS.yellow);
 
   useEffect(() => {
-    const intervals = {
-      red: 4000,
-      yellow: 500,
-      green: 3000
-    };
-
-    const nextLight = {
-      red: 'green',
-      green: 'yellow',
-      yellow: 'red'
-    };
-
-    const intervalId = setInterval(() => {
-      setActiveLight(prevLight => nextLight[prevLight]);
-    }, intervals[activeLight]);
-
-    return () => clearInterval(intervalId);
-  }, [activeLight]);
+    switch (active) {
+      case LIGHTS.red:
+        setTimeout(() => {
+          setActive(LIGHTS.yellow);
+        }, 4000);
+        break;
+      case LIGHTS.yellow:
+        setTimeout(() => {
+          setActive(LIGHTS.green);
+        }, 500);
+        break;
+      case LIGHTS.green:
+        setTimeout(() => {
+          setActive(LIGHTS.red);
+        }, 3000);
+        break;
+    }
+  }, [active]);
 
   return (
-    <div className="traffic-light">
-      <div className={`light red ${activeLight === 'red' ? 'active' : ''}`}></div>
-      <div className={`light yellow ${activeLight === 'yellow' ? 'active' : ''}`}></div>
-      <div className={`light green ${activeLight === 'green' ? 'active' : ''}`}></div>
+    
+    <div className="wrapper">
+      <h1>Traffic Lights</h1>
+      <div
+        className="light green"
+        style={active !== LIGHTS.green ? { opacity: 0.5 } : null}
+      >
+        A
+      </div>
+      {/* <div className="go-proceed">
+        <h1>Go or Proceed</h1>
+      </div> */}
+      <div
+        className="light yellow"
+        style={active !== LIGHTS.yellow ? { opacity: 0.5 } : null}
+      >
+        B
+      </div>
+      <div
+        className="light red"
+        style={active !== LIGHTS.red ? { opacity: 0.5 } : null}
+      >
+        C
+      </div>
+      
     </div>
   );
 };
+
 
 export default TrafficLight;
