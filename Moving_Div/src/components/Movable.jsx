@@ -3,10 +3,22 @@ import React from "react";
 const Movable = () => {
   return (
     <div>
-      <button>Left</button>
-      <button>Right</button>
-      <button>Up</button>
-      <button>Down</button>
+      <div>
+        <button>Up</button>
+      </div>
+      <div>
+        <button>Left</button>
+      </div>
+      <div>
+        <button>Up</button>
+      </div>
+      <div>
+        <button>Down</button>
+      </div>
+     
+      <div>
+        <div className="block"></div>
+      </div>
     </div>
   );
 };
