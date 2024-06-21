@@ -28,10 +28,10 @@ const Moveable = () => {
     return (
         <div ref={blockRef}>
             <div>
-                <button className="horizontal" onClick={() => moveBlock("up")}>Up</button>
+                <button className="horizontal" onClick={() => moveBlock("up")} style={{color: 'orange'}}>Up</button>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between'}}>
-                <button  className="vertical" onClick={() => moveBlock("left")}>Left</button>
+                <button  className="vertical" onClick={() => moveBlock("left")} style={{color: 'orange'}}>Left</button>
                 <div className="wrapper">
                     <div 
                         className="block"
@@ -41,10 +41,10 @@ const Moveable = () => {
                             top: moving.y
                         }}></div>
                 </div>
-                <button className="vertical" onClick={() => moveBlock("right")}>Right</button>
+                <button className="vertical" onClick={() => moveBlock("right")} style={{color: 'orange'}}>Right</button>
             </div>
             <div>
-                <button className="horizontal" onClick={() => moveBlock("down")}>Down</button>
+                <button className="horizontal" onClick={() => moveBlock("down")} style={{color: 'orange'}}>Down</button>
             </div>        
         </div>
     )
