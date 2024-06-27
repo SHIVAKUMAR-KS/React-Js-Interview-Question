@@ -3,7 +3,10 @@ import React from 'react'
 const Timer = () => {
   return (
     <div>
-      Timer
+      <h1>Shiva's Timer</h1>
+      <div>
+        Timer
+      </div>
     </div>
   )
 }
