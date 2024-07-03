@@ -5,7 +5,7 @@ const Timer = () => {
     <div>
       <h1>Shiva's Timer</h1>
       <div>
-        Timer
+        Timer clock
       </div>
     </div>
   )
